@@ -1,3 +1,7 @@
+*{
+    background-color: transparent;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -31,15 +35,12 @@ body {
   }
   
   .row {
-    white-space: pre-wrap;
     height: 80px;
     border-top: 1px solid white;
   }
   
   .hour {
-    background-color: #ffffff;
     color: #000000;
-    border-top: 1px dashed #000000;
   }
   
   .past {
@@ -68,5 +69,61 @@ body {
   .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
-  }
   
+
+  }
+/*Update placement for these */
+.container{
+    border: 2px solid black;
+    max-width: 99%;
+}
+
+.hourBlock{
+    background-color: red;
+    max-height: 100%;
+    text-align: center;
+}
+
+#input {
+    height: 100%;
+    max-width: 100%;
+}
+
+.row {
+    border: 2px solid magenta;
+}
+
+.saveBox{
+    position: relative;
+    text-align: center;
+    align-content: center;
+    background-color: #a6c0f0;
+    max-height: 100%;
+    padding: 0px;
+    }
+
+.commentsBox{
+    border: 2px solid rgb(0, 255, 64);
+    left: 0px;
+    height: 100%;
+}
+.commentsBox{
+    background-color: lightgray;
+}
+input{
+    height: 100%;
+    width: 100%;
+}
+
+.hourText{
+    position: absolute;
+    top: 36%;
+    border: 2px solid green;
+}
+
+.saveText{
+    position: absolute;
+    top: 36%;
+    margin-left: 21%;
+    border: 2px solid green;
+}
