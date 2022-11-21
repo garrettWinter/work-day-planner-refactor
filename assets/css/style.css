@@ -91,6 +91,8 @@ body {
 
 .row {
     border: 2px solid magenta;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .saveBox{
@@ -113,6 +115,7 @@ body {
 input{
     height: 100%;
     width: 100%;
+    /* background-color: lightgray; UPDATE THIS FOR TIMECHECK */
 }
 
 .hourText{
@@ -123,7 +126,12 @@ input{
 
 .saveText{
     position: absolute;
-    top: 36%;
-    margin-left: 21%;
-    border: 2px solid green;
+    margin-left: 25%;
+    font-size: 60px;
+}
+
+#storeageMessage{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 25px;
 }
