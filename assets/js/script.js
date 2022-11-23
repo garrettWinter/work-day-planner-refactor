@@ -12,14 +12,14 @@ var commentsField = document.querySelector('.comments');
 dayDisplay.textContent = todayDay;
 dateTimeDisplay.textContent = dateTime;
 
+/* This runs on page load to display any comments stored in local storage */
 function init (){
     console.log("initFunction has run")
-    temp = JSON.parse(localStorage.getItem("testValue"));;
-    console.log(temp)
-    commentsField.value = temp
+    commentsField.value = JSON.parse(localStorage.getItem("testValue"));
 }
 
-function noteStorage () {
+/* This is save feature to store comments into local storage for future referance */
+function commentStorage () {
     console.log("noteStorage Function has been triggered");
     storeageText.textContent = "Appointment has been added to local storage.";
     comments = commentsField.value;
@@ -29,8 +29,12 @@ function noteStorage () {
 }
 
 
+
+
+
+
 /* Event Listeners */
-saveButton.addEventListener("click", noteStorage);
+saveButton.addEventListener("click", commentStorage);
  init()
 
 /* 
@@ -50,7 +54,19 @@ Time blocks
 Save Logic
     When blue disk button is clicked should save to local storage.
             Need to have local storage for each of the hours blocks
-    If a value is present, and then updated, should overwrite the text in the block
-    Onscreen message should be displayed when a time entry has been created or modified
+    DONE -- If a value is present, and then updated, should overwrite the text in the block
+    DONEOnscreen message should be displayed when a time entry has been
+        DONE -- created
+        modified
+
+Extras
+    Add button to clear all timeblock comments.
+
+Can I set an array
+    first item being the time
+    2 item being comment
+    have it build the content via JS looping on the aaray
+
+
 
 */

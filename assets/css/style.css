@@ -25,11 +25,7 @@ body {
     border-bottom: 10px solid black;
   }
   
-  .description {
-    white-space: pre-wrap;
-  }
-  
-  .time-block {
+   .time-block {
     text-align: center;
     border-radius: 15px;
   }
@@ -62,7 +58,7 @@ body {
     border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06aed5;
+    background-color: rgb(6, 174, 213);
     color: white;
   }
   
@@ -74,14 +70,16 @@ body {
   }
 /*Update placement for these */
 .container{
-    border: 2px solid black;
     max-width: 99%;
 }
 
 .hourBlock{
-    background-color: red;
+    border-top: 2px dotted black;
     max-height: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #input {
@@ -89,49 +87,37 @@ body {
     max-width: 100%;
 }
 
-.row {
-    border: 2px solid magenta;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 .saveBox{
-    position: relative;
+    /* position: relative; */
     text-align: center;
     align-content: center;
-    background-color: #a6c0f0;
+    background-color: rgb(6, 174, 213);
     max-height: 100%;
     padding: 0px;
+    border-left: black 1px solid;
+    border-bottom-right-radius: 20%;
+    border-top-right-radius: 20%;
+    color: white;
+    font-size: 75px;
+    
     }
 
 .commentsBox{
-    border: 2px solid rgb(0, 255, 64);
-    left: 0px;
     height: 100%;
-}
-.commentsBox{
     background-color: lightgray;
 }
 input{
     height: 100%;
     width: 100%;
+    border-color: transparent;
     /* background-color: lightgray; UPDATE THIS FOR TIMECHECK */
-}
-
-.hourText{
-    position: absolute;
-    top: 36%;
-    border: 2px solid green;
-}
-
-.saveText{
-    position: absolute;
-    margin-left: 25%;
-    font-size: 60px;
 }
 
 #storeageMessage{
     font-weight: bolder;
     font-size: 20px;
     margin-top: 25px;
+}
+.commentBlock{
+    padding: 0px;
 }
