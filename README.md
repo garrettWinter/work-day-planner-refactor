@@ -5,14 +5,14 @@
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?
-    - To build a webpage that will quiz the users knowledge of basic JavaScript, and that will hopefully teach them something as well.
+    - To refactor a webpage that allows a user to plan their 9 to 5 workday using primarily JavaScript and that will.
 - Why did you build this project?
     - To showcase my expanding knowledge and JavaScript, HTML and CSS.
 - What did you learn?
-    - How to better define functions.
-    - How to store and retrieve data from local storage.
-    - A stronger understanding of event triggers work
-    - How to modify content elements using JavaScript.
+    - How to create elements using JavaScript
+    - How to add/ and append ids and classes to elements using JavaScript
+    - How to store and retrieve data from a larger array storage.
+    - How to use dayJS on a small scale.
 
 ## Table of Contents 
 
@@ -25,17 +25,16 @@ Provide a short description explaining the what, why, and how of your project. U
   
 
     - This webpage can be viewed by following the below link:
-        - https://garrettwinter.github.io/javascript-password-generator-build/
+        - https://garrettwinter.github.io/work-day-planner-refactor/
         
     - Below a screenshot of the webpage:
-![Screenshot of Garrett Winter's JavaScript-Code-Quiz](./assets/images/Screencapture-JavaScript-Code-Quiz.png)
+![Screenshot of Garrett Winter's Work Day Planner](./assets/images/Screencapture-Work-Day-Planner.png)
 
 ## Credits
 
 While working on this project I had collaborated in real-time with:
   - Garrett Winter (https://github.com/garrettWinter)
   - Salahuddin Imdad (https://github.com/Sal8298)
-  - Krister Myrlønn (https://github.com/kristermyr)
 
 ## License
 
@@ -64,8 +63,11 @@ SOFTWARE.
 ## Features
 
 Some notable items for this project are:
-    - A toggle switch to show/hide the high scores
-    - Dynamic button control to prevent buttons from being used at inappropriate times.
-    - High Score data is stored on local computer to allow that user to come back later to try to score even better.
-    - A button to clear high scores from local storage if desired.
-    - Some silly/dad jokes in a couple of the answer options.
+    - Dynamically shows the day of the week and the date upon load of the page.
+    - Dynamic changes the background of the hour block based on what time it is of the day.
+        Grey - In the past
+        Red - Currently that hour
+        Green - In the future.
+    - User is able to place comments in an hour block and click the save button.
+    - Users is let known the comments are saved via a message that is added to the page.
+    - Data is stored on the users local machine and if present on page load will be displayed to the user.
