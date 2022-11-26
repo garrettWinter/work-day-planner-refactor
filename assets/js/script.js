@@ -4,12 +4,13 @@ var dayDisplay = document.querySelector("#day");
 var dateTimeDisplay = document.querySelector("#date");
 var saveButton = document.querySelector('.saveBox');
 var storeageText = document.querySelector("#storeageMessage");
-var commentsField = document.querySelector('.comments');
 var logicTestVar = document.querySelector('.testingDiv');
-var commentBlock = document.querySelector('.commentBlock'); 
+var commentBlock = document.querySelector('.commentBlock');
+var tableContainer = document.querySelector('#tableContainer');
+var clickedElement = '';
 // var currentHour = moment().format('HH');
 var currentHour = 14;
-console.log(currentHour)
+console.log(currentHour+" this is the current HH")
 var storageArray = [
     [9, "9 AM", ''],
     [10, "10 AM", ''],
@@ -22,34 +23,9 @@ var storageArray = [
     [17, "5 PM", ''],
 ];
 
-
-/* Vars created to clear errors */
-
-
 /* Day/Date updates */
 dayDisplay.textContent = todayDay;
 dateTimeDisplay.textContent = dateTime;
-
-/* This runs on page load to display any comments stored in local storage */
-function init() {
-    console.log("initFunction has run")
-    commentsField.value = JSON.parse(localStorage.getItem("testValue"));
-    var logicTest = 0;
-    logicTest = storageArray[0][0] - currentHour;
-    console.log(logicTest);
-    if (logicTest < 0) {
-        // commentBlock.style.backgroundColor = "#d3d3d3";
-        commentBlock.classList.add("past")
-    }
-    else if (logicTest > 0) {
-        // commentBlock.style.backgroundColor = "#77dd77";
-        commentBlock.classList.add("future")
-    }
-    else {
-        // commentBlock.style.backgroundColor = "#ff6961";
-        commentBlock.classList.add("present")
-    };
-}
 
 function tableGeneration (){
     for (let i = 0; i < storageArray.length; i++) {    
@@ -68,7 +44,7 @@ function tableGeneration (){
                 var createCommentBlockInput = document.createElement('input');
 
         /* Creation of the saveBox */
-        var createSaveBoxDiv = document.createElement('div');
+        var createSaveBoxBtn = document.createElement('button');
 
 
     /* Element Updates */
@@ -99,14 +75,16 @@ function tableGeneration (){
 
         createCommentBlockForm.classList.add("commentsBox");
         createCommentBlockInput.classList.add("comments");
+        createCommentBlockInput.id= "input"+[i];
 
         /* Creation of the saveBox */
-        createSaveBoxDiv.classList=("col saveBox"); /* See if this works */
-        createSaveBoxDiv.textContent = "🖫";
+        createSaveBoxBtn.classList=("col saveBox"); /* See if this works */
+        createSaveBoxBtn.id= [i];
+        createSaveBoxBtn.textContent = "🖫";
 
 
     /* Element Appending */
-    var tableContainer = document.getElementById('timeBox');
+    var tableContainer = document.getElementById('tableContainer');
 
     createHoourBlockP.appendChild(CreateHourBlockSpan);
     createHourBlockDiv.appendChild(createHoourBlockP);
@@ -114,39 +92,33 @@ function tableGeneration (){
     createCommentBlockForm.appendChild(createCommentBlockInput);
     createCommentBlockDiv.appendChild(createCommentBlockForm);
     createRowDiv.appendChild(createCommentBlockDiv);
-    createRowDiv.appendChild(createSaveBoxDiv);
+    createRowDiv.appendChild(createSaveBoxBtn);
     tableContainer.appendChild(createRowDiv);
 
 }};
 
 /* This is save feature to store comments into local storage for future referance */
-function commentStorage() {
-    console.log("noteStorage Function has been triggered");
-    storeageText.textContent = "Appointment has been added to local storage.";
-    comments = commentsField.value;
-    console.log(comments);
-    localStorage.setItem("testValue", JSON.stringify(commentsField.value));
+function commentStorage(event) {
+    if (event.target.className === 'col saveBox'){
+        console.log("noteStorage Function has been triggered");
+        clickedElement = event.target.id;
+        console.log(clickedElement + " has been clicked");
+        storeageText.textContent = "Appointment Details have been added to your calendar.";
+        comments = ("input"+event.target.id);
+        console.log(comments); 
+    };
+
+
 }
 
-
 /* Event Listeners */
-saveButton.addEventListener("click", commentStorage);
-init()
+tableContainer.addEventListener("click", commentStorage);
+tableGeneration()
 
 /* 
 
 Pseduo Coding
-Time blocks
-    Add Logic to check if 
-        Time block hour minus Current Hour
-            if negative will be green
-            if 0 will be red
-            if positive will be green
-        Logic should update the contents class 
-            .past {
-            .present {
-            .future {
-        Style the row to look like the mockup
+
 Save Logic
     When blue disk button is clicked should save to local storage.
             Need to have local storage for each of the hours blocks
