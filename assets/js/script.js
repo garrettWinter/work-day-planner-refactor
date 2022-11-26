@@ -1,5 +1,5 @@
-var todayDay = moment().format('dddd');
-var dateTime = moment().format('MMMM Do YYYY');
+var todayDay = dayjs().format('dddd');
+var dateTime = dayjs().format('MMMM D, YYYY');
 var dayDisplay = document.querySelector("#day");
 var dateTimeDisplay = document.querySelector("#date");
 var saveButton = document.querySelector('.saveBox');
@@ -7,7 +7,7 @@ var storeageText = document.querySelector("#storeageMessage");
 var logicTestVar = document.querySelector('.testingDiv');
 var commentBlock = document.querySelector('.commentBlock');
 var tableContainer = document.querySelector('#tableContainer');
-var currentHour = moment().format('HH');
+var currentHour = dayjs().format('HH');
 // currentHour = 14; // This setting can be used to override time
 var storageArray = [
     [9, "9 AM", ''],
