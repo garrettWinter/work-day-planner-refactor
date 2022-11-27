@@ -5,7 +5,7 @@
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?
-    - To refactor a webpage that allows a user to plan their 9 to 5 workday using primarily JavaScript and that will.
+    - To refactor a webpage that allows a user to plan their 9 to 5 workday while being able to save any entry notes to their local device using primarily JavaScript.
 - Why did you build this project?
     - To showcase my expanding knowledge and JavaScript, HTML and CSS.
 - What did you learn?
