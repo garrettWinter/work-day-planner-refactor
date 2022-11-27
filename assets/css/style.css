@@ -109,11 +109,6 @@ input {
 @media screen and (max-width: 640px) {
   .saveBox{
     font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .saveBox{
-    font-size: 15px;
+    min-width: 35px;
   }
 }
