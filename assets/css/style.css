@@ -103,3 +103,17 @@ input {
   color: white;
   font-size: 58px;
 }
+
+/*Media Query to keep the formating responsive to the users viewport*/
+
+@media screen and (max-width: 640px) {
+  .saveBox{
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .saveBox{
+    font-size: 15px;
+  }
+}
